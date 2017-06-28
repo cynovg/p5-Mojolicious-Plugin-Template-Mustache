@@ -1,10 +1,35 @@
 package Mojolicious::Plugin::Template::Mustache;
 use Mojo::Base 'Mojolicious::Plugin';
 
+use Template::Mustache;
+
 our $VERSION = '0.01';
 
 sub register {
-  my ($self, $app) = @_;
+    my ($self, $app, $args) = @_;
+
+    $args //= {};
+    my $mustache = Template::Mustache->new(%$args);
+    $Template::Mustache::template_path = '';
+
+    $app->renderer->add_handler(mustache => sub {
+        my ($renderer, $c, $output, $options) = @_;
+
+        if ($options->{inline}) {
+            my $inline_template = $options->{inline};
+            $$output = $mustache->render($inline_template, $c->stash) if $inline_template;
+        }
+        elsif (my $template_name = $renderer->template_path($options)) {
+            $Template::Mustache::template_file = $template_name;
+            $$output = $mustache->render($c->stash);
+        } else {
+            my $data_template = $renderer->get_data_template($options);
+            $$output = $mustache->render($data_template, $c->stash) if $data_template;
+        }
+        return $$output ? 1 : 0;
+    });
+
+    return 1;
 }
 
 1;
