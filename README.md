@@ -1,3 +1,4 @@
+[![MetaCPAN Release](https://badge.fury.io/pl/Mojolicious-Plugin-Template-Mustache.svg)](https://metacpan.org/release/Mojolicious-Plugin-Template-Mustache)
 # NAME
 
 Mojolicious::Plugin::Template::Mustache - Mojolicious Plugin
