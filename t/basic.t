@@ -15,7 +15,7 @@ get '/inline' => sub {
   my $c = shift;
   $c->render(
       handler => 'mustache',
-      inline  => 'Hello, {{message}}!',
+      inline  => 'Inline hello, {{message}}!',
       message => 'Mustache',
   );
 };
@@ -39,13 +39,13 @@ get '/file' => sub {
 
 my $t = Test::Mojo->new;
 $t->get_ok('/')->status_is(200)->content_is('Hello Mojo!');
-$t->get_ok('/inline')->status_is(200)->content_is('Hello, Mustache!');
-$t->get_ok('/data')->status_is(200)->content_is('Hello, Mustache!');
-$t->get_ok('/file')->status_is(200)->content_is('Hello, Mustache!');
+$t->get_ok('/inline')->status_is(200)->content_is('Inline hello, Mustache!');
+$t->get_ok('/data')->status_is(200)->content_is('Hello from data, Mustache!');
+$t->get_ok('/file')->status_is(200)->content_is('Hello from template, Mustache!');
 
 done_testing();
 
 __DATA__
 
 @@ data.html.mustache
-Hello, {{message}}!
+Hello from data, {{message}}!
