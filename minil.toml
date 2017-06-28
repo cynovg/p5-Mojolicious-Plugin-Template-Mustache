@@ -1,0 +1,6 @@
+name = "Mojolicious-Plugin-Template-Mustache"
+# badges = ["travis"]
+authority="cpan:CYNOVG"
+
+module_maker="ModuleBuildTiny"
+
