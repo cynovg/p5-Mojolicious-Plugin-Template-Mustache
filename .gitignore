@@ -40,3 +40,6 @@ inc/
 /Build.bat
 !META.json
 !LICENSE
+
+#PyCharm
+_Deparsed_XSubs.pm
