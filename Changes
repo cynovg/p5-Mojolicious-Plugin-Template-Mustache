@@ -2,6 +2,10 @@ Revision history for Perl extension Mojolicious-Plugin-Template-Mustache
 
 {{$NEXT}}
 
+0.02 2017-07-17T17:29:34Z
+
+    - add path to local lib into tests
+
 0.01 2017-06-28T10:02:06Z
 
     - original version
