@@ -4,7 +4,7 @@
       "Cyrill Novgorodcev <cynovg@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v3.0.10, CPAN::Meta::Converter version 2.142690",
+   "generated_by" : "Minilla/v3.0.10, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "gpl_3"
    ],
@@ -61,8 +61,5 @@
    },
    "version" : "0.01",
    "x_authority" : "cpan:CYNOVG",
-   "x_contributors" : [
-      "Novgorodcev Cyrill <cynovg@gmail.com>",
-      "Kirill Novgorodcev <novgorodtsev.kirill@220-volt.ru>"
-   ]
+   "x_serialization_backend" : "JSON::PP version 2.27300_01"
 }
