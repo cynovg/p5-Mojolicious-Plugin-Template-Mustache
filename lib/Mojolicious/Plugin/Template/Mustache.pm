@@ -15,24 +15,27 @@ sub register {
         my Mojolicious::Controller $c = shift;
         my ($output, $options) = @_;
 
-        if ($options->{inline} and (my $inline_template = $options->{inline})) {
-            my $mustache = Template::Mustache->new(
-                   template => $inline_template,
-               );
-            $$output = $mustache->render($c->stash);
+        my $mustache;
+        if ($options->{inline} and my $inline_template = $options->{inline}) {
+            $mustache = Template::Mustache->new(
+                template => $inline_template,
+                %{$args},
+            );
         }
         elsif (my $template_name = $renderer->template_path($options)) {
-            my $mustache = Template::Mustache->new(
-                    template_path => $template_name
-                );
-            $$output = $mustache->render($c->stash);
+            $mustache = Template::Mustache->new(
+                template_path => $template_name,
+                %{$args},
+            );
         } else {
             my $data_template = $renderer->get_data_template($options);
-            my $mustache = Template::Mustache->new(
-                    template => $data_template
-                );
-            $$output = $mustache->render($c->stash) if $data_template;
+            $mustache = Template::Mustache->new(
+                template => $data_template,
+                %{$args},
+            );
         }
+        $$output = $mustache->render($c->stash) if $mustache;
+
         return $$output ? 1 : 0;
     });
 
