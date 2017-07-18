@@ -6,12 +6,14 @@ use Template::Mustache;
 our $VERSION = '0.02';
 
 sub register {
-    my ($self, $app, $args) = @_;
+    my (undef, $app, $args) = @_;
 
     $args //= {};
 
     $app->renderer->add_handler(mustache => sub {
-        my ($renderer, $c, $output, $options) = @_;
+        my Mojolicious::Renderer $renderer = shift;
+        my Mojolicious::Controller $c = shift;
+        my ($output, $options) = @_;
 
         if ($options->{inline} and (my $inline_template = $options->{inline})) {
             my $mustache = Template::Mustache->new(
