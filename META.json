@@ -4,7 +4,7 @@
       "Cyrill Novgorodcev <cynovg@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v3.0.10, CPAN::Meta::Converter version 2.150005",
+   "generated_by" : "Minilla/v3.0.10, CPAN::Meta::Converter version 2.142690",
    "license" : [
       "gpl_3"
    ],
@@ -43,7 +43,7 @@
       "runtime" : {
          "requires" : {
             "Mojolicious" : "0",
-            "Template::Mustache" : "0"
+            "Template::Mustache" : "v1.0.2"
          }
       }
    },
@@ -59,7 +59,10 @@
          "web" : "https://github.com/cynovg/Mojolicious-Plugin-Template-Mustache"
       }
    },
-   "version" : "0.02",
+   "version" : "0.03",
    "x_authority" : "cpan:CYNOVG",
-   "x_serialization_backend" : "JSON::PP version 2.27300_01"
+   "x_contributors" : [
+      "Cyrill Novgorodcev <cynovg@gmail.com>",
+      "Kirill Novgorodcev <novgorodtsev.kirill@220-volt.ru>"
+   ]
 }
