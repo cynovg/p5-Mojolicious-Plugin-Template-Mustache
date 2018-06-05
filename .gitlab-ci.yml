@@ -1,0 +1,17 @@
+image: perl
+
+stages:
+  - test
+
+test:
+    stage: test
+    before_script:
+      - perl -V
+      - cpan install App::cpm
+      - cpm install -g
+      - cpm install Devel::Cover -g
+      - cpm install Minilla -g
+    script:
+      - HARNESS_PERL_SWITCHES=-MDevel::Cover=+ignore,\\.t$,\\.conf$ minila test 
+      - cover
+
