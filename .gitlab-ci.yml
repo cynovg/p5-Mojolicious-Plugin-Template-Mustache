@@ -12,6 +12,6 @@ test:
       - cpm install Devel::Cover -g
       - cpm install Minilla -g
     script:
-      - HARNESS_PERL_SWITCHES=-MDevel::Cover=+ignore,\\.t$,\\.conf$ minila test 
+      - HARNESS_PERL_SWITCHES=-MDevel::Cover=+ignore,\\.t$,\\.conf$ minil test 
       - cover
 
