@@ -9,9 +9,7 @@ test:
       - perl -V
       - cpan install App::cpm
       - cpm install -g
-      - cpm install Devel::Cover -g
       - cpm install Minilla -g
     script:
-      - HARNESS_PERL_SWITCHES=-MDevel::Cover=+ignore,\\.t$,\\.conf$ minil test 
-      - cover
+      - minil test 
 
