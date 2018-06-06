@@ -1,0 +1,15 @@
+image: perl
+
+stages:
+  - test
+
+test:
+    stage: test
+    before_script:
+      - perl -V
+      - cpan install App::cpm
+      - cpm install -g
+      - cpm install Minilla -g
+    script:
+      - minil test 
+
