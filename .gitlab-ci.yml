@@ -11,7 +11,7 @@ test:
       - chmod +x cpm
       - ./cpm install -g
       - ./cpm install Devel::Cover -g
-      - ./cpm install Module::Build::Tiny
+      - ./cpm install Module::Build::Tiny -g
     script:
       - perl Build.PL
       - perl Build
