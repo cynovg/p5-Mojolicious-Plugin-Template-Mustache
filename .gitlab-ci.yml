@@ -7,9 +7,14 @@ test:
     stage: test
     before_script:
       - perl -V
-      - cpan install App::cpm
-      - cpm install -g
-      - cpm install Minilla -g
+      - curl -sL --compressed https://git.io/cpm > cpm
+      - chmod +x cpm
+      - ./cpm install -g
+      - ./cpm install Devel::Cover -g
+      - ./cpm install Module::Build::Tiny -g
     script:
-      - minil test 
+      - perl Build.PL
+      - perl Build
+      - HARNESS_PERL_SWITCHES=-MDevel::Cover=+ignore,\\.t$,\\.conf$ perl Build test
+      - cover
 
