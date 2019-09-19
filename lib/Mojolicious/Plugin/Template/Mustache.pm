@@ -8,15 +8,14 @@ our $VERSION = '0.03';
 sub register {
     my (undef, $app, $args) = @_;
 
-    $args //= {};
-
     $app->renderer->add_handler(mustache => sub {
         my Mojolicious::Renderer $renderer = shift;
         my Mojolicious::Controller $c = shift;
         my ($output, $options) = @_;
 
         my $mustache;
-        if ($options->{inline} and my $inline_template = $options->{inline}) {
+        if ($options->{inline}) {
+        	my $inline_template = $options->{inline};
             $mustache = Template::Mustache->new(
                 template => $inline_template,
                 %{$args},
@@ -34,9 +33,9 @@ sub register {
                 %{$args},
             );
         }
-        $$output = $mustache->render($c->stash) if $mustache;
+        $$output = $mustache->render($c->stash);
 
-        return $$output ? 1 : 0;
+        return !!$$output;
     });
 
     return 1;
