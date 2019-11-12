@@ -1,5 +1,5 @@
 package Mojolicious::Plugin::Template::Mustache;
-use v5.8.1;
+use v5.10.0;
 use Mojo::Base 'Mojolicious::Plugin';
 
 use Template::Mustache;
