@@ -54,9 +54,14 @@
    },
    "release_status" : "unstable",
    "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/cynovg/p5-Mojolicious-Plugin-Template-Mustache/issues"
+      },
+      "homepage" : "https://github.com/cynovg/p5-Mojolicious-Plugin-Template-Mustache",
       "repository" : {
          "type" : "git",
-         "url" : "git://gitlab.com/cynovg/Mojolicious-Plugin-Template-Mustache.git"
+         "url" : "git://github.com/cynovg/p5-Mojolicious-Plugin-Template-Mustache.git",
+         "web" : "https://github.com/cynovg/p5-Mojolicious-Plugin-Template-Mustache"
       }
    },
    "version" : "0.05",
