@@ -65,7 +65,7 @@
          "web" : "https://github.com/cynovg/p5-Mojolicious-Plugin-Template-Mustache"
       }
    },
-   "version" : "0.05",
+   "version" : "0.06",
    "x_authority" : "cpan:CYNOVG",
    "x_contributors" : [
       "Cyrill Novgorodcev <cynovg@cpan.org>"

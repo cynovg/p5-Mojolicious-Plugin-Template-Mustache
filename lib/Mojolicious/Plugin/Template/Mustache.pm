@@ -4,7 +4,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 
 use Template::Mustache;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 sub register {
     my ( undef, $app, $args ) = @_;
